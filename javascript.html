@@ -30,6 +30,44 @@
     <main>
         <hr>
         <h1>JavaScript</h1>
+        <hr>
+        <h2>Criando variáveis em JavaScript</h2>
+        
+        <h3>1- Textos (string):</h3>
+        <p>Pode-se usar aspas duplas (" ") ou simples (' '). Ex: </p>
+        <p class="pspan">var nome = "Luciano"; <span>// Cuidado: nomes de var sao case sensitive</span>
+        </p>
+        
+        <h3>2- Numéricos (int ou float):</h3>
+        <p>Int são variáveis do tipo INTEIRO, ou seja, não possuem a parte decimal. Já float são variáveis do tipo DECIMAL, aceitam números com vírgula. Ex:
+        </p>
+        <p class="pspan">var n1 = 3.45;  (float)         <span>// posso atribuir diretamente o valor da var ou</span> <br>
+            n1 = 2;         (int) 	    <span>// declarar a var e depois atribuir um valor a ela</span>
+        </p>
+        <h3>3- Booleanos:</h3>
+        <p>Exibem valores lógicos true e false.
+        </p>
+        <p class="pspan">let situacao = false; <br>
+        var aprovacao = true;
+        </p>
+        <h3>Diferenças entre CONST, VAR e LET:</h3>
+        <p>Enquanto as variáveis declaradas com <strong>let</strong> têm escopo de bloco, instrução ou expressão, as variáveis declaradas com <strong>var</strong> têm escopo global ou escopo de função. 
+            Antes de tudo é necessário entender o que é escopo de variáveis. <br> Escopo de variáveis nada mais é do que onde uma variável existe. 
+            Faça-se a seguinte pergunta: se eu declarar uma variável dentro de um bloco de if por exemplo, esta variável deve existir fora deste bloco de if? 
+            Se a sua resposta foi sim, você deve usar <strong>var</strong> para declará-la. Mas se a sua resposta foi não, ou seja, esta variável deve existir <span>apenas dentro do if</span>, você deve usar <strong>let</strong> para declará-la neste caso. 
+            A ideia funciona para qualquer tipo de bloco: if, for, while, função, etc.
+        </p>
+        <br>
+        <h3>Inserindo e recuperando dados</h3>
+        <p>Inserindo dados:
+        </p>
+        <p class="pspan">var usuario = prompt("Insira o nome do usuario:"); // insere dados via prompt</p>
+        <p>Recuperando dados:
+        </p>
+        <p class="pspan">alert(variavel); - solta uma msg numa janela popup <br>
+        document.write(variavel); - escreve na página <br>
+        console.log(variavel); - escreve no console.log            
+        </p>
     </main>
     <footer>
         <hr>
