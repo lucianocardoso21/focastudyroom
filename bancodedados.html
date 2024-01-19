@@ -36,11 +36,11 @@
         <p>CRUD é um acrônimo para Create - Read - Update - Delete. São as 4 operações básicas feitas em uma 
             tabela de banco de dados.No caso do MYSQL (nosso banco de dados) veremos como se cria/deleta um banco 
             de dados e uma tabela já de maneira formatada para o padrão.</p>
-        <p>Para criar um Banco de Dados, usamos o comando <span><strong>create database nome_do_bd</strong></span>. 
-            A seguir, usamos <span><strong>default character set utf8</strong></span> e a seguir disso
-            <span><strong>default collate utf8_general_ci;</strong></span>(lembrando de finalizar com <span><strong>;</strong></span>
+        <p>Para criar um Banco de Dados, usamos o comando <mark><strong>create database nome_do_bd</strong></mark>. 
+            A seguir, usamos <mark><strong>default character set utf8</strong></mark> e a seguir disso
+            <mark><strong>default collate utf8_general_ci;</strong></mark>(lembrando de finalizar com <mark><strong>;</strong></mark>
             e executar). Da mesma forma, para apagar um BD, basta usar o comando <strong>drop:</strong>.
-            <span><strong>drop database nome_do_bd</strong></span>.</p>
+            <mark><strong>drop database nome_do_bd</strong></mark>.</p>
         <p>O <strong>default character set utf8</strong> (constraint) e <strong>default collate utf8_general_ci</strong>
             (collate) parâmetros de configuração de caracteres. A linha de comando fica:</p>
         <p style="text-align: center;"> create database cadastro<br>
@@ -49,7 +49,7 @@
         <h3>2- Criando uma tabela</h3>
         <p>Tabelas seguem a mesma logica da criação de banco de dados, com algumas particularidades.
             Também podemos definir um conjunto de caracteres a serem suportados, basta no final usar
-            <span><strong>default charset = utf8;</strong></span>. Tabelas também possuem constraints:
+            <mark><strong>default charset = utf8;</strong></mark>. Tabelas também possuem constraints:
             <ul>Constraints:
                 <li>Not Null: Força o campo a ser preenchido obrigatoriamente. Not null = não nulo;</li>
                 <li>Enum ou Set: Define quais são os valores que serão aceitos. Para "sexo" por exemplo, ao invés de usar
