@@ -47,5 +47,14 @@ h3 {
 }
 .sumario {
     text-align: center;
-    
+}
+#imgtabela {
+    height: 25%;
+    width: 25%;
+}
+#rosa {
+    background-color: rgb(233, 163, 174);
+}
+#verde {
+    background-color: rgb(185, 231, 185);
 }
