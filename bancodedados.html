@@ -33,21 +33,30 @@
         <hr>
         <h2 style="padding-top: 10px;">CRUD: Create - Read - Update - Delete</h2>
         <h3 style="padding-top: 20px;">1- Criando um Banco de Dados</h3>
-        <p>CRUD é um acrônimo para Create - Read - Update - Delete. São as 4 operações básicas feitas em uma 
+        <p>
+            CRUD é um acrônimo para Create - Read - Update - Delete. São as 4 operações básicas feitas em uma 
             tabela de banco de dados.No caso do MYSQL (nosso banco de dados) veremos como se cria/deleta um banco 
-            de dados e uma tabela já de maneira formatada para o padrão.</p>
-        <p>Para criar um Banco de Dados, usamos o comando <mark><strong>create database nome_do_bd</strong></mark>. 
+            de dados e uma tabela já de maneira formatada para o padrão.
+        </p>
+        <p>
+            Para criar um Banco de Dados, usamos o comando <mark><strong>create database nome_do_bd</strong></mark>. 
             A seguir, usamos <mark><strong>default character set utf8</strong></mark> e a seguir disso
             <mark><strong>default collate utf8_general_ci;</strong></mark>(lembrando de finalizar com <mark><strong>;</strong></mark>
             e executar). Da mesma forma, para apagar um BD, basta usar o comando <strong>drop:</strong>.
-            <mark><strong>drop database nome_do_bd</strong></mark>.</p>
-        <p>O <strong>default character set utf8</strong> (constraint) e <strong>default collate utf8_general_ci</strong>
-            (collate) parâmetros de configuração de caracteres. A linha de comando fica:</p>
-        <p style="text-align: center;"> create database cadastro<br>
-            default character set utf8<br>
-            default collate utf8_general_ci;</p>
+            <mark><strong>drop database nome_do_bd</strong></mark>.
+        </p>
+        <p>
+            O <strong>default character set utf8</strong> (constraint) e <strong>default collate utf8_general_ci</strong>
+            (collate) parâmetros de configuração de caracteres. A linha de comando fica:
+        </p>
+            <pre><code>
+            create database cadastro
+            default character set utf8
+            default collate utf8_general_ci;
+            </pre></code>
         <h3>2- Criando uma tabela</h3>
-        <p>Tabelas seguem a mesma logica da criação de banco de dados, com algumas particularidades.
+        <p>
+            Tabelas seguem a mesma logica da criação de banco de dados, com algumas particularidades.
             Também podemos definir um conjunto de caracteres a serem suportados, basta no final usar
             <mark><strong>default charset = utf8;</strong></mark>. Tabelas também possuem constraints:
             <ul>Constraints:
@@ -64,17 +73,134 @@
                 <li>Auto_increment: Incrementa automaticamente o proximo valor.</li>
             </ul>
         </p>
-        <p style="text-align: center;">A linha de comando fica:<br>
-            Create table pessoas (
-            id int not null auto_increment,<br>
-            nome varchar(30) not null,<br>
-            nascimento date,<br>
-            sexo enum('M','F'),<br>
-            peso decimal(5,2),
-            altura(3,2),
-            nacionalidade varchar(20) default 'Brasil',
-            primary key (id)<br>
-            );</p>
+        <p>
+            A linha de comando fica:
+        </p>
+            <pre><code>
+                    Create table pessoas (
+                    id int not null auto_increment,
+                    nome varchar(30) not null,
+                    nascimento date,
+                    sexo enum('M','F'),
+                    peso decimal(5,2),
+                    altura(3,2),
+                    nacionalidade varchar(20) default 'Brasil',
+                    primary key (id)
+                    ) default charset = utf8;
+                </pre></code>
+        <h3>3- Inserindo dados em uma tabela</h3>
+        <p>
+            Inserir dados em tabelas segue a seguinte estrutura:
+        </p>
+        <pre><code>
+                insert into pessoas (id,nome,nascimento,sexo,peso,altura,nacionalidade)
+                values ('1','Creuza','1999-12-30','M','55.2','1.65','Brasil');
+        </pre></code>
+        <p>
+            No caso acima, como estamos inserindo odemos omitir o id uma vez que ele é auto increment. Ficaria:
+        </p>
+        <pre><code>
+            insert into pessoas (nome,nascimento,sexo,peso,altura,nacionalidade)
+            values ('Creuza','1999-12-30','M','55.2','1.65','Brasil');
+        </pre></code>
+        <p>
+            Ainda podemos inserir apenas os valores, caso a ordem seja exatamente a mesma. Também precisaremos
+            usar constraints <strong>default</strong> para preencher o campo <strong>id</strong> com valor
+            padrão (que é auto increment) e o campo nacionalidade que também possui valor padrão. Ficaria:
+        </p>
+        <pre><code>
+            insert into pessoas
+            values (default,'Creuza','1999-12-30','M','55.2','1.65',default);
+        </pre></code>
+        <p>
+            Ainda podemos inserir varios dados de uma ves só, separando-os por vírgulas:
+        </p>
+        <pre><code>
+            insert into pessoas
+            values (default,'Anna','1975-08-22','F','75.2','1.69','EUA'),
+            (default,'Janie','1975-08-22','F','75.2','1.69','Canadá'),
+            (default,'Nathalia','1992-08-22','F','65.0','1.60',default);
+        </pre></code>
+        <h3>4- Alterando a estrurura de uma tabela</h3>
+        <p>
+            Pode-se alretar a estrutura de uma tabela inserindo-se novas colunas (comando add). Vamos add a coluna 
+        <strong>profissao</strong> (SEM ACENTOS) na tabela pessoas: 
+        </p>
+        <pre><code>
+            alter table pessoas
+            add column profissao varchar(10);
+        </pre></code>
+        <p>
+            Apagando colunas (comando drop):
+        </p>
+        <pre><code>
+            alter table pessoas
+            drop column profissao varchar(10);
+        </pre></code>
+        <p>
+            Caso queiramos inserir a coluna após algum campo, basta usar a constraint <strong>after</strong>:
+        </p>
+        <pre><code>
+            alter table pessoas
+            add profissao varchar(10) after nome; <em>-- nome é o campo da tabela</em>
+        </pre></code>
+        <p>
+            Como não existe o comando "before", caso eu queira inserir uma coluna na primeira posição, 
+            basta usar o comando first. Nesse caso vamos add a coluna matrícula na primeira posição, antes
+            do campo nome:
+        </p>
+        <pre><code>
+        alter table pessoas
+        add column matricula int first;
+        </pre></code>
+        <h4>Modificando um campo da tabela</h4>
+        <p>
+            Também é possível modificar o campo de uma tabela com o comando <strong>modify</strong>. Vejamos
+            como alterar o tamanho do campo de varchar(10) para varchar(20):
+        </p>
+        <pre><code>
+        alter table pessoas
+        modify column profissao varchar(20);
+        </pre></code>
+        <p>
+            Também é possível modificar o nome do campo de uma tabela com o comando <strong>change</strong>.
+            É um comando similar, porém mais profundo que modify pq alem das constraints tb muda o nome.
+            Vejamos como alterar o tamanho do campo de profissão para prof:
+        </p>
+        <pre><code>
+        alter table pessoas
+        change column profissao prof varchar(20); <em>-- Change reseta as constraints. Se necessário, add elas novamente</em>
+        </pre></code>
+        <p>
+            Renomear um campo:
+        </p>
+        <pre><code>
+        alter table pessoas
+        rename to funcionarios;
+        </pre></code>
+        <p>
+            Usando o campo EXISTS <br> <br>
+            Pode-se usar o campo IF NOT EXISTS para que o comando somente seja aplicado caso o campo não
+            exista. Vejamos:
+        </p>
+        <pre><code>
+        create table <u>if not exists</u> cursos (
+        nome varchar(30) not null unique, <em>-- unique: não permite que um campo tenha o mesmo nome</em>
+        descricao text, 
+        carga int unsigned, <em>-- unsigned: não permite atribuição de sinais (+, -)...</em>
+        totaulas int unsigned, 
+        ano year default '2016'
+        ) default charset = utf8;
+        </pre></code>
+        <p>
+            De modo similar, podemos quando necessário, usar IF EXISTS, por exemplo, caso eu queira apagar
+            uma dabela se ela existir...
+        </p>
+        <h4>Outros comandos:</h4>
+        <ul>
+            <li>describe / desc: Descreve os campos e constraints ta tabela. Ex: <strong>desc pessoas</strong></li>
+            <li>select: Seleciona os campos da tabela. Ex: <strong>select * from pessoas</strong></li>
+        </ul>
     </main>
     <footer>
         <hr>
