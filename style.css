@@ -1,0 +1,131 @@
+@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
+
+:root{
+    --cor1: #F6EB14;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  /*display:flex;
+  justify-content:center;
+  align-items:center;*/
+  font-family: 'Press Start 2P';
+  font-size: 1rem;
+  line-height: 2;
+  height: 100%;
+  background-color: #221;
+  text-transform: uppercase;
+}
+
+main, .li_form{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color:lime;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    text-align: justify;
+    margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff090;
+}
+
+li {
+  color: #4FAF44;
+  
+}
+
+.inline-menu {
+    list-style: none;
+    text-align: center;
+    margin-top: 10px;
+    position: absolute;
+    top: 7%;
+    right: 60px;
+    transform: translateY(-50%);
+}
+
+.inline-menu li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.arrow i {
+  display: none;
+}
+
+.arrow {
+  position:relative;
+	display: block;
+  color: #F6EB14;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.arrow:hover i { 
+  display: block;
+  position: absolute;
+  top: 0.50em; 
+  left: -1.5em;
+}
+
+#logo{
+      background-size: contain; /* ou cover, dependendo do comportamento desejado */
+      width: 50px; 
+      height: 50px;
+}
+
+#container{
+    padding-top: 10px;
+    padding-left: 45px;
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+
+#anim {
+  height: 64px;
+  margin-left: 250px;
+  margin-top: 5px;
+}
+
+#footer-text {
+  text-align: center; 
+  color: #f6eb14;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 45px;
+  margin-left: 5px;
+  position: absolute;
+}
+
+#imgtabela {
+  width: 400px;
+}
+
+ul li, ol li {
+  margin-left: 35px;
+}
+
+.submenu {
+  font-family: 'Press Start 2P';
+  font-size: 10pt;
+  color: var(--cor1);
+}
+.submenu a:hover {
+  color: lime;
+}
+
+h1 {
+  font-family: 'Press Start 2P';
+  color: var(--cor1);
+}

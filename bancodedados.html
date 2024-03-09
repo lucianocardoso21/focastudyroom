@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumos de Programação</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy/1QK2jg5F5/BLUUVLQ6A5nRLdPQb5tc+" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+    </head>
+<body>
+    <header>
+        <div id="container">
+            <img id="logo" src="img/pngwing.com(1).png" alt="Logo">
+        </div>
+        <ul class="inline-menu">
+            <li><a class="arrow" href="index.html"><i class="fa-solid fa-right-long"></i></i>Home</a></li>
+            <li><a class="arrow" href="html_css.html"><i class="fa-solid fa-right-long"></i></i>HTML/CSS</a></li>
+            <li><a class="arrow" href="javascript.html"><i class="fa-solid fa-right-long"></i></i>JAVASCRIPT</a></li>
+            <li><a class="arrow" href="php.html"><i class="fa-solid fa-right-long"></i></i>PHP</a></li>
+            <li><a class="arrow" href="java.html"><i class="fa-solid fa-right-long"></i></i>JAVA</a></li>
+            <li><a class="arrow" href="python.html"><i class="fa-solid fa-right-long"></i></i>PYTHON</a></li>
+            <li><a class="arrow" href="bancodedados.html"><i class="fa-solid fa-right-long"></i></i>BANCO DE DADOS</a></li>
+          </ul>
+    </header>
+    <main>
+        <hr>
+        <h1 style="margin-bottom: 10px;">Banco de Dados</h1>
+        <p class="submenu">select mode: <a class="submenu" href="#">Intermediario</a> <a class="submenu" href="#">Avançado</a></p>
+        <hr>
+        <br>
+        <h2>CRUD: Create - Read - Update - Delete</h2>
+        <h3 style="margin-top: 20px;">1- Criando um Banco de Dados</h3>
+        <p>CRUD é um acrônimo para Create - Read - Update - Delete. São as 4 operações básicas feitas em uma 
+            tabela de banco de dados.No caso do MYSQL (nosso banco de dados) veremos como se cria/deleta um banco 
+            de dados e uma tabela já de maneira formatada para o padrão.</p>
+        <p>Para criar um Banco de Dados, usamos o comando <mark><strong>create database nome_do_bd</strong></mark>. 
+            A seguir, usamos <mark><strong>default character set utf8</strong></mark> e a seguir disso
+            <mark><strong>default collate utf8_general_ci;</strong></mark>(lembrando de finalizar com <mark><strong>;</strong></mark>
+            e executar). Da mesma forma, para apagar um BD, basta usar o comando <strong>drop:</strong>.
+            <mark><strong>drop database nome_do_bd</strong></mark>.</p>
+        <p>O <strong>default character set utf8</strong> (constraint) e <strong>default collate utf8_general_ci</strong>
+            (collate) parâmetros de configuração de caracteres. A linha de comando fica:</p>
+        <p style="text-align: center;"> create database cadastro<br>
+            default character set utf8<br>
+            default collate utf8_general_ci;</p>
+        <h3>2- Criando uma tabela</h3>
+        <p>Tabelas seguem a mesma logica da criação de banco de dados, com algumas particularidades.
+            Também podemos definir um conjunto de caracteres a serem suportados, basta no final usar
+            <mark><strong>default charset = utf8;</strong></mark>. Tabelas também possuem constraints:
+            <ul>Constraints:
+                <li>Not Null: Força o campo a ser preenchido obrigatoriamente. Not null = não nulo;</li>
+                <li>Enum ou Set: Define quais são os valores que serão aceitos. Para "sexo" por exemplo, ao invés de usar
+                    "charset(1)", que o usuário pode digitar a letra que ele quiser, aceitaremos apenas 'M' e 'F';</li>
+                <li>Decimal: Define quantos numeros podem ser aceitos e quantos ficam antes ou depois da vírgula.
+                    exemplo: decimal(5,2) = 5 numeros sendo que 2 ficam depois da virgula: 102,50.</li>
+                <li>Default: define qual o padrão do parâmetro. Por exemplo, eu posso digitar a nacionalidade numa
+                    tabela e, caso nao digite nada, o padrão será 'Brasil'.</li>
+                <li>Primary key: Chave primaria: Campo exclisivo para cada registro. Ex: CPF, nº matricula... Vincula
+                    aqueles dados a UM ÚNICO registro, mesmo que esses registros tenham campos semelhantes. Ex: Caso
+                    2 pessoas tenham nome identico, o CPF nunca é igual.</li>
+                <li>Auto_increment: Incrementa automaticamente o proximo valor.</li>
+            </ul>
+        </p>
+        <p style="text-align: center;">A linha de comando fica:<br>
+            Create table pessoas (
+            id int not null auto_increment,<br>
+            nome varchar(30) not null,<br>
+            nascimento date,<br>
+            sexo enum('M','F'),<br>
+            peso decimal(5,2),
+            altura(3,2),
+            nacionalidade varchar(20) default 'Brasil',
+            primary key (id)<br>
+            );</p>
+    </main>
+    <footer>
+        <hr>
+        <img id="anim" src="img/16 bit 7.gif" alt="Animação">
+        <p id="footer-text">Luciano Cardoso - Todos os direitos reservados</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/e48b29fedb.js" crossorigin="anonymous"></script>
+</body>
+</html>

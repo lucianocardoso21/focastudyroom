@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumos de Programação</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy/1QK2jg5F5/BLUUVLQ6A5nRLdPQb5tc+" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+    </head>
+<body>
+    <header>
+        <div id="container">
+            <img id="logo" src="img/pngwing.com(1).png" alt="Logo">
+        </div>
+        <ul class="inline-menu">
+            <li><a class="arrow" href="index.html"><i class="fa-solid fa-right-long"></i></i>Home</a></li>
+            <li><a class="arrow" href="html_css.html"><i class="fa-solid fa-right-long"></i></i>HTML/CSS</a></li>
+            <li><a class="arrow" href="javascript.html"><i class="fa-solid fa-right-long"></i></i>JAVASCRIPT</a></li>
+            <li><a class="arrow" href="php.html"><i class="fa-solid fa-right-long"></i></i>PHP</a></li>
+            <li><a class="arrow" href="java.html"><i class="fa-solid fa-right-long"></i></i>JAVA</a></li>
+            <li><a class="arrow" href="python.html"><i class="fa-solid fa-right-long"></i></i>PYTHON</a></li>
+            <li><a class="arrow" href="bancodedados.html"><i class="fa-solid fa-right-long"></i></i>BANCO DE DADOS</a></li>
+          </ul>
+    </header>
+    <main>
+        <hr>
+        <h1 style="margin-bottom: 10px;">JavaScript</h1>
+        <p class="submenu">select mode: <a class="submenu" href="javascript.html">voltar</a> <a class="submenu" href="#">Avançado</a></p>
+        <hr>
+        <br>
+        <h2>Inserindo tags, elementos e atributos via Javascript</h2>
+        <p>
+            É possível criar tags e elementos html via Javascript, dinamicamente, bem como setar atributos. Vejamos o código a seguir:
+            <pre>
+                <code>
+                    function verificar(){
+                        <mark style="background-color: yellow;">var img = document.createElement('img');</mark>
+                        var res = document.getElementById('res');
+                        <mark style="background-color: rgb(74, 172, 74);">img.setAttribute('id','foto');</mark>
+                        <mark style="background-color: rgb(66, 66, 245);">img.setAttribute('src','jova.jpg');</mark>
+                        <mark style="background-color: rgb(233, 81, 81);">img.setAttribute('height', '100px');</mark>
+                        <mark style="background-color: rgb(148, 66, 148);">res.appendChild(img);</mark>
+                        }
+                </code>
+            </pre>
+            No código acima, estamos inserindo <mark>Criando um elemento (tag) HTML</mark>, a seguir, <mark style="background-color: rgb(74, 172, 74);">Setamos a id como 'foto'</mark>, depois <mark style="background-color: rgb(66, 66, 245);">Setamos a src (a imagem em si)</mark>, que por sinal, ficou muito grande, então <mark style="background-color: rgb(233, 81, 81);">setamos a altura de 100px</mark> e aí vem o pulo do gato: <mark style="background-color: rgb(148, 66, 148);">Fizemos tudo isso aparecer dentro da variável 'res'</mark>
+        </p>
+        <h2>Verificando Radio Buttons</h2>
+        <p>
+            No caso de radio buttons, podemos verificar qual está marcado a depender do valor retornado. Vejamos o código abaixo:
+            <pre><code>
+                &lt;body&gt;
+                    &lt;input type="radio" name="gen" id="masc" value="Masculino" <mark style="background-color: rgb(238, 101, 101);">checked</mark>>Masculino
+                    &lt;input type="radio" name="gen" id="fem" value="Feminino">Feminino <br> <br>
+                    &lt;button type="submit" onclick="verificar()">Mandar</button>
+                    &lt;div id="res1">div1</div>
+                    &lt;div id="res2">div2</div>
+                    
+                    &lt;script>
+                        function verificar(){
+                        var genero = document.getElementsByName('gen');
+                        var res1 = document.getElementById('res1');
+                        var res2 = document.getElementById('res2');
+                        <mark>res1.innerHTML = genero[0].checked;</mark>
+                        <mark>res2.innerHTML = genero[1].checked;</mark>
+                    }
+                
+                    &lt;/script>
+                &lt;/body&gt;
+            </code></pre>
+            No código acima, estamos verificando <mark>qual radio button está marcado (checked)</mark> - que é diferente do outro <mark style="background-color: rgb(238, 101, 101);">checked</mark> no escopo html. <mark>Este checked</mark> está verificando qual radio button está marcado (se o da posição [0], [1] ou outra posição qualquer) e <mark style="background-color: rgb(238, 101, 101);">o outro</mark> está estabelecendo um dos campos como padrão (para evitar que os campos deixem de estar marcados.)
+        </p>
+    </main>
+    <footer>
+        <hr>
+        <img id="anim" src="img/16 bit 7.gif" alt="Animação">
+        <p id="footer-text">Luciano Cardoso - Todos os direitos reservados</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/e48b29fedb.js" crossorigin="anonymous"></script>
+</body>
+</html>
