@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resumos de Programação</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy/1QK2jg5F5/BLUUVLQ6A5nRLdPQb5tc+" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy/1QK2jg5F5/BLUUVLQ6A5nRLdPQb5tc+" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
     </style>
-    </head>
+</head>
+
 <body>
     <header>
         <div id="container">
@@ -24,24 +27,28 @@
             <li><a class="arrow" href="php.html"><i class="fa-solid fa-right-long"></i></i>PHP</a></li>
             <li><a class="arrow" href="java.html"><i class="fa-solid fa-right-long"></i></i>JAVA</a></li>
             <li><a class="arrow" href="python.html"><i class="fa-solid fa-right-long"></i></i>PYTHON</a></li>
-            <li><a class="arrow" href="bancodedados.html"><i class="fa-solid fa-right-long"></i></i>BANCO DE DADOS</a></li>
-          </ul>
+            <li><a class="arrow" href="bancodedados.html"><i class="fa-solid fa-right-long"></i></i>BANCO DE DADOS</a>
+            </li>
+        </ul>
     </header>
     <main>
         <hr>
         <h1 style="margin-bottom: 10px;">php</h1>
-        <p class="submenu">select mode: <a class="submenu" href="#">Intermediario</a> <a class="submenu" href="#">Avançado</a></p>
+        <p class="submenu">select mode: <a class="submenu" href="#">Intermediario</a> <a class="submenu"
+                href="#">Avançado</a></p>
         <hr>
         <br>
         <p>
-            echo: Exibe (retorna) um valor na tela. Ex: <strong>echo "a soma vale ".$soma;</strong> Lembrando que . serve 
+            echo: Exibe (retorna) um valor na tela. Ex: <strong>echo "a soma vale ".$soma;</strong> Lembrando que .
+            serve
             para concatenar e que tem sempre que terminar com ; <br>
             dentro das aspas de um echo pode usar qq tag html <br>
             var booleanas: todas as letras minusculas <br>
             concatenação
             simbolo de concatenação: ponto (.)
-            não é necessário usar pois o php dentro do echo sabe que variaveis começam com $ e já entende automatico. exemplos: <br>
-            <pre>
+            não é necessário usar pois o php dentro do echo sabe que variaveis começam com $ e já entende automatico.
+            exemplos: <br>
+        <pre>
                 <code>
                     $nome = "luciano";
                     $idade = 40;
@@ -49,8 +56,8 @@
                     echo $nome." tem ".$idade." anos!" (luciano tem 40 anos!)
                 </code>
             </pre>
-ou
-echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
+        ou
+        echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
 
         </p>
         <hr>
@@ -61,14 +68,14 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
         </p>
         <ol>
             <li>printf(): permite exibir uma string já formatada aceita vários parametros de formatação (ver manual).
-                ex: 
+                ex:
                 <pre>
                     <code>
                         $prod = "leite"; // string
                         $preco = 4.5; //float
                         printf("O %s está custando R$ %.2f", $prod, $preco); // %s - string %f - float
                     </code>
-                </pre>                
+                </pre>
             <li>print_r(): Exibe coleções, objetos e variáveis compostas (vetores e matrizes) de maneira organizada.
                 ex:
                 <pre>
@@ -81,8 +88,9 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
                         orint_r($v);
                         // tb pode ser substituido por var_dump(); ou var_export();
                     </code>
-                </pre>                
-            <li>wordwrap(): Cria quebras de linha ou divisões em uma string em um tamanho especificado, tanto de forma interna como de forma externa.
+                </pre>
+            <li>wordwrap(): Cria quebras de linha ou divisões em uma string em um tamanho especificado, tanto de forma
+                interna como de forma externa.
                 ex:
                 <pre>
                     <code>
@@ -90,12 +98,14 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
                         $res = wordwrap($txt, 10, "<&#98;&#114;>\n", false);
                     </code>
                 </pre>
-                
-            <li>strlen(): Permite verificar o tamanho de uma string, contando seus caracteres (inclusive espaços em branco). <br><br>   
+
+            <li>strlen(): Permite verificar o tamanho de uma string, contando seus caracteres (inclusive espaços em
+                branco). <br><br>
             <li>trim(): Elimina espaços em branco antes e depois de uma string. <br><br>
             <li>ltrim(): Elimina espaços no início de uma string. left trim <br><br>
-            <li>rtrim(): Elimina espaços em branco no final de uma string. right trim <br><br>                
-            <li>str_word_count(): Conta quantas palavras uma string possui e armazena cada palavra em uma posição de array.
+            <li>rtrim(): Elimina espaços em branco no final de uma string. right trim <br><br>
+            <li>str_word_count(): Conta quantas palavras uma string possui e armazena cada palavra em uma posição de
+                array.
                 ex:
                 <pre>
                     <code>
@@ -104,8 +114,9 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
                         print_r($count); //print_r para mostrar um vetor.
                     </code>
                 </pre>
-                O param 0 (ou sem nada) mostra a quantidade de palavras. Param 1 mostra o array e o param 2 mostra o array na posição em que cada palavra começa. <br><br>
-                
+                O param 0 (ou sem nada) mostra a quantidade de palavras. Param 1 mostra o array e o param 2 mostra o
+                array na posição em que cada palavra começa. <br><br>
+
             <li>explode(): Quebra uma string e coloca os itens em um vetor.
                 ex:
                 <pre>
@@ -115,7 +126,7 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
                         print_r($vetor);
                     </code>
                 </pre>
-                
+
             <li>str_split(): Coloca cada letra de uma string em uma posição de um vetor.
                 Ex:
                 <pre>
@@ -125,7 +136,7 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
                         print_r($vetor);
                     </code>
                 </pre>
-                
+
             <li>implode(): Transforma um vetor inteiro em uma string.
                 Ex:
                 <pre>
@@ -139,9 +150,78 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
                         print ($texto);
                     </code>
                 </pre>
-                
-            <li>chr() : Retorna um caractere de acordo com seu código ASCII passado como parâmetro. <br><br>
-            <li>ord(): Retorna o código ASCII de um caractere passado como parâmetro.
+
+            <li>chr() : Retorna um caractere de acordo com seu código ASCII passado como parâmetro. <br>
+            <li>ord(): Retorna o código ASCII de um caractere passado como parâmetro. <br>
+            <li>strtolower() = passa a string toda para minusculas. <br>
+            <li>strtoupper() = passa a string toda para maiusculas. <br>
+            <li>ucfirst() = passa a primeira letra da string para maiusculas. Apenas a 1a. Pode ser usada em conjunto
+                com outras funções, por exemplo:
+                <pre>
+                    <code>
+                        $nome = 'lUCiANo';
+                        $nome2 = strtolower($nome); // resultado: luciano
+                        $nome3 = ucfirst(@nome2); // resultado: Luciano
+                    </code>
+                </pre>
+
+            <li>ucwords() = passa a primeira letra de cada palavra da string para maiusculas. <br>
+            <li>strrev() = mostra a string revertida.
+            <li>strpos() = mostra em que posição a string procurada foi encontrada. A str tem que estar escrita
+                EXATAMENTE da maneira pesquisada. Exemplo:
+                <pre>
+                    <code>
+                        $frase = 'Estou aprendendo PHP';
+                        $pos = strpos($frase, 'PHP'); // retorna o valor 17, posição onde aparece. Ele não acha se php estiver
+                        escrito diferente (em minusculo por exemplo).
+                    </code>
+                </pre>
+
+            <li>stripos() = mostra em que posição a string procurada foi encontrada. Ignora formatação Exemplo:
+                <pre><code>
+                    $frase = 'Estou aprendendo PHP';
+                    $pos = strpos($frase, 'php'); // retorna o valor 17, posição onde aparece
+                </code></pre>
+
+            <li>substr_count() = conta quantas vezes a substring aparece. Exemplo:
+                <pre><code>
+                    $frase = "Estou aprendendo PHP no curso de PHP";
+                    $count = substr_count($frase, "PHP");
+                    print("$count"); // retorno: 2
+                </code></pre>
+
+            <li>substr() = Fatia a string. Exemplo:
+                <pre><code>
+                    $site = "Curso em Vídeo";
+                    $site2 = substr($site,0,5) // fatia a str $site começando na pos 0 e andando 5 posições.
+                    $site3 = substr($site,6) // fatia a str $site começando na pos 6 até o final.
+                    $site4 = substr($site,-5,2) // fatia a str $site começando de tras para frente, andando 2 pra frente.
+                    print("$site2"); // retorno: Curso
+                    print("$site3"); // retorno: em Vídeo
+                    print("$site4"); // retorno: Vi
+                </code></pre>
+
+            <li>str_pad() = faz a string caber em um determinado espaço. Sintaxe: str_pad($var,30," ",STR_PAD_RIGHT);
+                onde $var é o nome da variável, 30 é a quantidade de caracteres a serem ocupados, " " é com o que os
+                espaços serão preenchidos (nesse caso, com espaços em branco) e STR_PAD_RIGHT é como os espaços serão
+                preenchidos.
+                STR_PAD_RIGHT - direita
+                STR_PAD_LEFT - esquerda
+                STR_PAD_CENTER - esq e dir. <br><br>
+
+            <li>str_repeat() = repete o texto informado. Ex:
+                <pre><code>
+                    $txt = str_repeat("Php",5);
+                    print("$txt"); // PhpPhpPhpPhpPhp
+                </code></pre>
+
+            <li>str_replace() = Substitui uma string. Segue a mesma lógica do strpos()/stripos(), podendo ser
+                <pre><code>
+                    str_ireplace(). Ex:
+                    $frase = "gosto de matematica";
+                    $nova = str_ireplace("matematica", "php", $frase);
+                    echo $nova // gosto de php
+                </code></pre>
         </ol>
     </main>
     <footer>
@@ -151,4 +231,5 @@ echo "$nome tem $idade anos!" (luciano tem 40 anos! direto entre aspas)
     </footer>
     <script src="https://kit.fontawesome.com/e48b29fedb.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -2,6 +2,8 @@
 
 :root{
     --cor1: #F6EB14;
+    --cor2: #4FAF44;
+    --cor3:#221;
 }
 * {
   margin: 0;
@@ -16,7 +18,7 @@ html, body {
   font-size: 1rem;
   line-height: 2;
   height: 100%;
-  background-color: #221;
+  background-color: var(--cor3);
   text-transform: uppercase;
 }
 
@@ -33,11 +35,12 @@ main, .li_form{
 
 a {
   text-decoration: none;
-  color: #fff090;
+  /*color: #fff090;*/
+  color: var(--cor1);
 }
 
 li {
-  color: #4FAF44;
+  color: lime;
   
 }
 
@@ -53,7 +56,8 @@ li {
 
 .inline-menu li {
     display: inline-block;
-    margin-right: 5px;
+    /*margin-right: 5px;*/
+    align-items: center;
 }
 
 .arrow i {
@@ -63,7 +67,7 @@ li {
 .arrow {
   position:relative;
 	display: block;
-  color: #F6EB14;
+  color: var(--cor1);
 }
 
 .arrow:hover {
@@ -102,7 +106,7 @@ header {
 
 footer {
   text-align: center;
-  color: #f6eb14;
+  color: var(--cor1);
   position: relative;
   margin-top: 45px;
 }

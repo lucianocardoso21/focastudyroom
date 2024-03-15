@@ -35,19 +35,30 @@
         <br>
         <h2>CRUD: Create - Read - Update - Delete</h2>
         <h3 style="margin-top: 20px;">1- Criando um Banco de Dados</h3>
-        <p>CRUD é um acrônimo para Create - Read - Update - Delete. São as 4 operações básicas feitas em uma 
+        <p>
+            CRUD é um acrônimo para Create - Read - Update - Delete. São as 4 operações básicas feitas em uma 
             tabela de banco de dados.No caso do MYSQL (nosso banco de dados) veremos como se cria/deleta um banco 
-            de dados e uma tabela já de maneira formatada para o padrão.</p>
-        <p>Para criar um Banco de Dados, usamos o comando <mark><strong>create database nome_do_bd</strong></mark>. 
+            de dados e uma tabela já de maneira formatada para o padrão.
+        </p>
+        <p>
+            Para criar um Banco de Dados, usamos o comando <mark><strong>create database nome_do_bd</strong></mark>. 
             A seguir, usamos <mark><strong>default character set utf8</strong></mark> e a seguir disso
             <mark><strong>default collate utf8_general_ci;</strong></mark>(lembrando de finalizar com <mark><strong>;</strong></mark>
             e executar). Da mesma forma, para apagar um BD, basta usar o comando <strong>drop:</strong>.
-            <mark><strong>drop database nome_do_bd</strong></mark>.</p>
-        <p>O <strong>default character set utf8</strong> (constraint) e <strong>default collate utf8_general_ci</strong>
-            (collate) parâmetros de configuração de caracteres. A linha de comando fica:</p>
-        <p style="text-align: center;"> create database cadastro<br>
-            default character set utf8<br>
-            default collate utf8_general_ci;</p>
+            <mark><strong>drop database nome_do_bd</strong></mark>.
+        </p>
+        <p>
+            O <strong>default character set utf8</strong> (constraint) e <strong>default collate utf8_general_ci</strong>
+            (collate) parâmetros de configuração de caracteres. A linha de comando fica:
+            <pre>
+                <code>
+                    create database cadastro
+                    default character set utf8
+                    default collate utf8_general_ci;
+                </code>
+            </pre>
+        </p>
+            
         <h3>2- Criando uma tabela</h3>
         <p>Tabelas seguem a mesma logica da criação de banco de dados, com algumas particularidades.
             Também podemos definir um conjunto de caracteres a serem suportados, basta no final usar
@@ -65,18 +76,23 @@
                     2 pessoas tenham nome identico, o CPF nunca é igual.</li>
                 <li>Auto_increment: Incrementa automaticamente o proximo valor.</li>
             </ul>
+        </p><br>
+        <p>A linha de comando fica:<br>
+            <pre>
+                <code>
+                    Create table pessoas (
+                    id int not null auto_increment,
+                    nome varchar(30) not null,
+                    nascimento date,
+                    sexo enum('M','F'),
+                    peso decimal(5,2),
+                    altura(3,2),
+                    nacionalidade varchar(20) default 'Brasil',
+                    primary key (id)
+                    );
+                </code>
+            </pre>
         </p>
-        <p style="text-align: center;">A linha de comando fica:<br>
-            Create table pessoas (
-            id int not null auto_increment,<br>
-            nome varchar(30) not null,<br>
-            nascimento date,<br>
-            sexo enum('M','F'),<br>
-            peso decimal(5,2),
-            altura(3,2),
-            nacionalidade varchar(20) default 'Brasil',
-            primary key (id)<br>
-            );</p>
     </main>
     <footer>
         <hr>
